@@ -1,18 +1,31 @@
+/////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
-////////////////// FAÇA O SEU CÓDIGO AQUI \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////////////////////////////
 
 class Aluno {
-  
+  Nome
+  Idade
+  Nota
+
+  constructor(nome, idade, nota){
+    this.Nome = nome;
+    this.Idade = idade;
+    this.Nota = nota;
+  }
 }
 
 // Array
-
+let arrayAlunos = [];
 
 //funções projeto
 
-function CadastrarAluno() {
-  
+function CadastrarAluno(nome, idade, nota, array) {
+  let objetoAluno = new Aluno(nome, idade, nota)
+
+  if(!array.some(aluno => aluno.Nome == nome)){ // testa se ao menos um dos itens é verdadeiro e retorna true ou false
+    array.push(objetoAluno) //adiciona no array
+    return objetoAluno;
+  }
 }
 
 function OrdenarPorNota() {
