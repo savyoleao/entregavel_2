@@ -28,12 +28,14 @@ function CadastrarAluno(nome, idade, nota, array) {
   }
 }
 
-function OrdenarPorNota() {
- 
+function OrdenarPorNota(array) {
+ array.sort((nota1, nota2) => nota1.Nota - nota2.Nota)
+ return array
 }
 
-function OrdenarPorIdade() {
-
+function OrdenarPorIdade(array) {
+  array.sort((idade1, idade2) => idade1.Idade - idade2.Idade)
+  return array
 }
 
 function OrdenarPorNome() {
