@@ -29,7 +29,7 @@ function CadastrarAluno(nome, idade, nota, array) {
 }
 
 function OrdenarPorNota(array) {
- array.sort((nota1, nota2) => nota1.Nota - nota2.Nota)
+ array.sort((nota1, nota2) => nota1.Nota - nota2.Nota)//ordenação
  return array
 }
 
@@ -38,12 +38,26 @@ function OrdenarPorIdade(array) {
   return array
 }
 
-function OrdenarPorNome() {
-
+function OrdenarPorNome(array) {
+  array.sort((nome1, nome2) => {
+    if(nome1.Nome > nome2.Nome){
+      return 1; //o nome1 fica a frente do nome2
+    }else if(nome1.Nome < nome2.Nome){
+      return -1 //o nome2 fica a frente do nome1
+    }
+    return 0;//permanece inalterado (nesse caso os dois valores sao iguais)
+  })
+  return array;
 }
 
-function CalcularMedia(){
+function CalcularMedia(array){
+  let somaNotas = 0;
+  array.forEach((notas) =>{ //percorre cada numero do array e soma eles
+    somaNotas += Number(notas.Nota)
+  })
 
+  const media = somaNotas / array.length;
+  return media;
 }
 
 ////////////////////////////////////////////////////////////////////////
